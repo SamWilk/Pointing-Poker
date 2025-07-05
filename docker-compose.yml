@@ -1,0 +1,28 @@
+version: "3.8"
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  react-app:
+    build:
+      context: ./pointing-poker
+      dockerfile: Dockerfile
+    ports:
+      - "4000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+    restart: unless-stopped
+    networks:
+      - app-network

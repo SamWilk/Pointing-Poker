@@ -1,0 +1,19 @@
+{
+  "name": "pointing-poker",
+  "version": "1.0.0",
+  "scripts": {
+    "compose": "docker-compose up --build -d",
+    "down": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamWilk/Pointing-Poker.git"
+  },
+  "author": "Sam Wilk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SamWilk/Pointing-Poker/issues"
+  },
+  "homepage": "https://github.com/SamWilk/Pointing-Poker#readme",
+  "description": ""
+}

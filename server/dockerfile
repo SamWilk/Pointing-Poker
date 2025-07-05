@@ -1,0 +1,18 @@
+# Use official Node.js 18 Alpine image for small size
+FROM node:18-alpine
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy all backend source files
+COPY . .
+
+# Expose the port your Express app runs on
+EXPOSE 3000
+
+# Start the server
+CMD ["npm", "run", "start"]
