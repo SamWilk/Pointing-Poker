@@ -2,7 +2,7 @@
   "name": "pointing-poker",
   "version": "1.0.0",
   "scripts": {
-    "compose": "docker-compose up --build -d",
+    "up": "docker-compose up --build -d",
     "down": "docker-compose down"
   },
   "repository": {

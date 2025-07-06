@@ -13,6 +13,8 @@ import Navbar from "./components/NavBar/Navbar";
 import GoogleAd from "./components/Ads/GoogleAd";
 import { useEffect } from "react";
 import About from "./components/About/About";
+import CopyLink from "./components/CopyLink/CopyLink";
+import JoinRoom from "./components/JoinRoom/JoinRoom";
 
 function Logins() {
   return (
@@ -33,16 +35,24 @@ function Home() {
   const joiningFlag = searchParams.get("joinGame");
 
   useEffect(() => {
+    if (joiningFlag && gameID) {
+      var encodedName = "";
+      const encodedGameID = encodeURIComponent(gameID.trim());
+      if (user) {
+        encodedName = encodeURIComponent(user.trim());
+        navigate(`/join?gameID=${encodedGameID}&user=${encodedName}`);
+      }
+      navigate(`/join?gameID=${encodedGameID}`);
+    }
     if (!joiningFlag && (!user || !gameID)) {
       navigate("/login");
-    } else {
-      // send user to create guest login to join room
     }
   }, [user, gameID, joiningFlag, navigate]);
 
   return (
     <div className="home">
       <h2>{user ? `Welcome, ${user}` : "Home"}</h2>
+      <CopyLink gameID={gameID} />
       <GoogleAd slot={12345} />
     </div>
   );
@@ -56,6 +66,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Logins />} />
         <Route path="/about" element={<About />} />
+        <Route path="/join" element={<JoinRoom />} />
       </Routes>
     </Router>
   );

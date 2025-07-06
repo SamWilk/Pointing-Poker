@@ -8,7 +8,7 @@ services:
   react-app:
     build:
       context: ./pointing-poker
-      dockerfile: Dockerfile
+      dockerfile: Dev.dockerfile
     ports:
       - "4000:80"
     restart: unless-stopped
