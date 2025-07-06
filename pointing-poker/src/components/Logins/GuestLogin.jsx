@@ -51,7 +51,7 @@ export default function GuestLogin() {
         />
         {error && <p className="guest-error">{error}</p>}
         <button className="guest-button" type="submit">
-          Login and {joinGame ? "Join" : "Create"} Room
+          {joinGame ? "Join" : "Login and Create"} Room
         </button>
       </form>
     </div>
