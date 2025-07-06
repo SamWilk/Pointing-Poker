@@ -177,3 +177,10 @@ body {
 .guest-button:hover {
   background-color: #0056b3;
 }
+
+.guest-error {
+  color: red;
+  font-size: 0.875rem;
+  margin: -0.5rem 0 0.5rem;
+  text-align: left;
+}
