@@ -50,17 +50,16 @@ nginx.*
 coverage/
 *.pid
 
-# Optional: react-scripts testing snapshots
 __snapshots__/
 
-# Optional: dotenv backups
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Optional: VSCode launch configs
 .launch.json
 
-# Optional: skip Docker local volumes (uncomment if needed)
-# docker-volumes/
+package-lock*
+
+
+
